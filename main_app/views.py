@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # baby step - usually a model is used 
-cats = [
+
+pokemon = [
   {'name': 'Mew', 'type': 'psychic', 'description': 'pyschic cat', 'No.': 151},
   {'name': 'Arcanine', 'type': 'fire', 'description': 'gentle and loving', 'age': 59},
 ]
