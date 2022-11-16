@@ -1,12 +1,5 @@
 from django.shortcuts import render
-# baby step - usually a model is used 
-
-pokemon = [
-  {'name': 'Mew', 'type': 'psychic', 'description': 'pyschic cat', 'No.': 151},
-  {'name': 'Arcanine', 'type': 'fire', 'description': 'gentle and loving', 'age': 59},
-]
-
-
+from .models import Pokemon
 # Create your views here.
 
 def home(request):
@@ -17,6 +10,13 @@ def about(request):
     return render(request, 'about.html')
 
 def pokemons_index(request):
+   pokemons = Pokemon.objects.all()
    return render(request, 'pokemons/index.html', {
-    'pokemons': pokemon
+    'pokemons': pokemons
+  })
+
+def pokemons_detail(request, pokemon_id):
+  pokemon = Pokemon.objects.get(id=pokemon_id)
+  return render(request, 'pokemons/details.html', {
+    'pokemon': pokemon
   })
