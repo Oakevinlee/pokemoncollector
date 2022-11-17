@@ -12,6 +12,10 @@
       <p>Nature: {{ pokemon.nature }}</p>
      
     </div>
+    <div class="card-action">
+      <a href="{% url 'pokemons_update' pokemon.id %}">Edit</a>
+      <a href="{% url 'pokemons_delete' pokemon.id %}">Delete</a>
+    </div>
   </div>
 
 
